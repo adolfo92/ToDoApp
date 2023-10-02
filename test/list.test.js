@@ -1,4 +1,4 @@
-import { List } from "../AppModules/list";
+import { List } from "../src/AppModules/list";
 describe("***List", () => {
   test("Create one list", () => {
     const expected = "Tareas de casa";
