@@ -1,4 +1,4 @@
-import { List, toDoList } from "../AppModules/list";
+import { List } from "../AppModules/list";
 describe("***List", () => {
   test("Create one list", () => {
     const expected = "Tareas de casa";
@@ -8,6 +8,7 @@ describe("***List", () => {
 
 describe("***Object Chore", () => {
   const newList = new List("randomName");
+  const listItem = newList.getList();
 
   test("add Object Chore", () => {
     newList.addObjectChore("test");
@@ -16,14 +17,14 @@ describe("***Object Chore", () => {
   });
 
   test("Change Object chore status", () => {
-    const item1 = newList.getList()[0];
+    const item1 = listItem[0];
     item1.changeStatus();
     const expected = [{ name: "test", done: true }];
     expect(newList.getList()).toEqual(expected);
   });
 
   test("Add property to object Chore", () => {
-    const item1 = newList.getList()[0];
+    const item1 = listItem[0];
     item1.setDescription("Some random text");
     const expected = [
       { name: "test", done: true, description: "Some random text" },

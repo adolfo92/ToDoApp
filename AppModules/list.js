@@ -5,6 +5,10 @@ class List {
     this.name = name;
   }
 
+  changeName(newName) {
+    this.name = newName;
+  }
+
   getName() {
     return this.name;
   }
@@ -40,6 +44,9 @@ class Chore {
     this.name = name;
   }
 
+  changeName(newName) {
+    this.name = newName;
+  }
   changeStatus() {
     this.done === true ? (this.done = false) : (this.done = true);
   }
