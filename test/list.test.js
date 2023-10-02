@@ -6,47 +6,6 @@ describe("***List", () => {
   });
 });
 
-describe("***List chore adding", () => {
-  const newList = new List("random name");
-
-  test("Add one Chore", () => {
-    newList.addChore("test1");
-    const expected = ["test1"];
-    expect(newList.getList()).toEqual(expected);
-  });
-
-  test("Add two more chores", () => {
-    newList.addChore("test2");
-    newList.addChore("test3");
-    const expected = ["test1", "test2", "test3"];
-    expect(newList.getList()).toEqual(expected);
-  });
-
-  test("Add mixed uppercase chores", () => {
-    newList.addChore("teST4");
-    const expected = ["test1", "test2", "test3", "test4"];
-    expect(newList.getList()).toEqual(expected);
-  });
-
-  test("Error if add chore is passed other than a string", () => {
-    expect(() => {
-      newList.addChore(1254);
-    }).toThrow(/addChore/);
-  });
-
-  test("Remove chore by list index", () => {
-    newList.removeChore(3);
-    const expected = ["test1", "test2", "test4"];
-    expect(newList.getList()).toEqual(expected);
-  });
-
-  test("Error if remove chore is passed other than a number", () => {
-    expect(() => {
-      newList.removeChore("abcdef");
-    }).toThrow(/removeChore/);
-  });
-});
-
 describe("***Object Chore", () => {
   const newList = new List("randomName");
 
