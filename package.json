@@ -4,7 +4,7 @@
   "description": "ToDo app to practice object creation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,15 @@
   },
   "homepage": "https://github.com/adolfo92/ToDoApp#readme",
   "dependencies": {
+    "@babel/core": "^7.22.20",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.15",
+    "babel": "^6.23.0",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-transform-modules-commonjs"
+    ]
   }
 }
