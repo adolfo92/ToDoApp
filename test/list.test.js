@@ -71,4 +71,10 @@ describe("***Object Chore", () => {
     ];
     expect(newList.getList()).toEqual(expected);
   });
+
+  test("Remove chore by list index", () => {
+    newList.removeObjectChore(1);
+    const expected = [];
+    expect(newList.getList()).toEqual(expected);
+  });
 });

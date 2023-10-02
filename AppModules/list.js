@@ -34,8 +34,23 @@ class List {
   }
 
   addObjectChore(chore) {
+    if (typeof chore !== "string") {
+      throw new Error(
+        "El metodo addChore() de la clase List debe recibir un numero"
+      );
+    }
     const newChore = new Chore(chore);
     this.choreList.push(newChore);
+  }
+
+  removeObjectChore(listIndex) {
+    if (typeof listIndex !== "number") {
+      throw new Error(
+        "El metodo removeChore() de la clase List debe recibir un numero"
+      );
+    }
+    const arrayIndex = listIndex - 1;
+    this.choreList.splice(arrayIndex, 1);
   }
 }
 
