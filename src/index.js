@@ -7,6 +7,7 @@ myList.addObjectChore("regar las matas");
 myList.addObjectChore("comprar cigarros");
 myList.addObjectChore("llamar a oriana");
 const currentList = myList.getList();
+const listName = myList.getName();
 //-------
 
 const tablon = document.getElementById("board");
@@ -14,8 +15,9 @@ const tablon = document.getElementById("board");
 createListUIon(tablon);
 
 const listdiv = document.querySelector(".list");
-
-console.log(currentList.length);
+const listHeader = document.createElement("h1");
+listHeader.textContent = `${listName}`;
+listdiv.appendChild(listHeader);
 
 for (let i = 0; i < currentList.length; i++) {
   listdiv.appendChild(displayChoreUI(currentList[i]));
