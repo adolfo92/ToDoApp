@@ -23,7 +23,7 @@ function _makeChoreContainer() {
 function displayChoreUI(choreObj) {
   const choreContainer = _makeChoreContainer();
 
-  for (key in choreObj) {
+  for (let key in choreObj) {
     const propertyContainer = document.createElement("div");
     propertyContainer.classList.add("property");
     propertyContainer.classList.add(`${key}`);
