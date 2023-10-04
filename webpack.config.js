@@ -9,6 +9,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  optimization: {
+    minimize: false,
+  },
 
   mode: "production",
 };
