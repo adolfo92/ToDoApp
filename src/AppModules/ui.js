@@ -18,6 +18,10 @@ function _makeChoreContainer() {
   choreContainer.appendChild(deleteButton);
 
   return choreContainer;
+  // Resumen: crea el div y el button
+  // Le agrega una clase a ambos
+  // mete el boton en el div
+  // retorna el div
 }
 
 function displayChoreUI(choreObj) {
@@ -37,6 +41,14 @@ function displayChoreUI(choreObj) {
   }
 
   return choreContainer;
+  // Resumen: recibe Objeto
+  // Crea el contenedor
+  // Pasa por cada uno de las propiedades del objeto
+  //  Si es la propiedad es "done" se la asigna como data-key al contenedor
+  //  Si no es done, crea un div, le agrega dos clases, property y la propiedad
+  //  el contenido de la propiedad se agrega como texto dentro del div
+  //  Se mete el nuevo div dentro del contenedor
+  // Retorna el contenedor
 }
 
 export { createListUIon, displayChoreUI };
