@@ -24,6 +24,10 @@ function displayChoreUI(choreObj) {
   const choreContainer = _makeChoreContainer();
 
   for (let key in choreObj) {
+    if (key === "done") {
+      choreContainer.dataset.done = `${choreObj[key]}`;
+      continue;
+    }
     const propertyContainer = document.createElement("div");
     propertyContainer.classList.add("property");
     propertyContainer.classList.add(`${key}`);
