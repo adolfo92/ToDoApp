@@ -24,7 +24,7 @@ function _makeChoreContainer() {
   // retorna el div
 }
 
-function displayChoreUI(choreObj) {
+function displayChoreUI(choreObj, index = 0) {
   const choreContainer = _makeChoreContainer();
 
   for (let key in choreObj) {
@@ -32,6 +32,7 @@ function displayChoreUI(choreObj) {
       choreContainer.dataset.done = `${choreObj[key]}`;
       continue;
     }
+    setIndex(choreContainer, index);
     const propertyContainer = document.createElement("div");
     propertyContainer.classList.add("property");
     propertyContainer.classList.add(`${key}`);
@@ -40,9 +41,15 @@ function displayChoreUI(choreObj) {
     choreContainer.appendChild(propertyContainer);
   }
 
+  function setIndex(container, number) {
+    console.log(number);
+    container.dataset.choreIndex = `${number}`;
+  }
+
   return choreContainer;
-  // Resumen: recibe Objeto
+  // Resumen: recibe Objeto junto a un index
   // Crea el contenedor
+  // agrega la data del index al contenedor
   // Pasa por cada uno de las propiedades del objeto
   //  Si es la propiedad es "done" se la asigna como data-key al contenedor
   //  Si no es done, crea un div, le agrega dos clases, property y la propiedad
