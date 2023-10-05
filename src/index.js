@@ -20,5 +20,5 @@ listHeader.textContent = `${listName}`;
 listdiv.appendChild(listHeader);
 
 for (let i = 0; i < currentList.length; i++) {
-  listdiv.appendChild(displayChoreUI(currentList[i]));
+  listdiv.appendChild(displayChoreUI(currentList[i], i));
 }
