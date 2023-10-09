@@ -11,7 +11,7 @@ describe("***Object Chore", () => {
   const listItem = newList.getList();
 
   test("add Object Chore", () => {
-    newList.addObjectChore("test");
+    newList.addChore("test");
     const expected = [{ name: "test", done: false }];
     expect(newList.getList()).toEqual(expected);
   });
@@ -33,7 +33,7 @@ describe("***Object Chore", () => {
   });
 
   test("Remove chore by list index", () => {
-    newList.removeObjectChore(1);
+    newList.removeChore(1);
     const expected = [];
     expect(newList.getList()).toEqual(expected);
   });

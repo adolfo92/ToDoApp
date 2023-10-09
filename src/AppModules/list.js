@@ -17,7 +17,7 @@ class List {
     return this.choreList;
   }
 
-  addObjectChore(chore) {
+  addChore(chore) {
     if (typeof chore !== "string") {
       throw new Error(
         "El metodo addChore() de la clase List debe recibir un numero"
@@ -27,7 +27,7 @@ class List {
     this.choreList.push(new Chore(lowercaseChore));
   }
 
-  removeObjectChore(listIndex) {
+  removeChore(listIndex) {
     if (typeof listIndex !== "number") {
       throw new Error(
         "El metodo removeChore() de la clase List debe recibir un numero"
