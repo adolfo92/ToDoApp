@@ -1,8 +1,8 @@
-function createListUIon(parent) {
+import { _setIndex, _addClasses } from "./helpers";
+function createListUIon(parent, listName) {
   const listDiv = document.createElement("div");
   const addChoreButton = document.createElement("button");
-
-  listDiv.classList.add("list");
+  _addClasses(listDiv, "list", listName);
   addChoreButton.classList.add("addChore");
   listDiv.appendChild(addChoreButton);
 
@@ -38,18 +38,6 @@ function _makeChoreContainer() {
   choreContainer.appendChild(deleteButton);
 
   return choreContainer;
-}
-
-// Create data-key
-function _setIndex(container, number) {
-  console.log(number);
-  container.dataset.choreIndex = `${number}`;
-}
-
-function _addClasses(container, ...classes) {
-  for (let i = 0; i < classes.length; i++) {
-    container.classList.add(classes[i]);
-  }
 }
 
 export { createListUIon, displayChoreUI };
