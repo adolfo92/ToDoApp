@@ -12,7 +12,7 @@ const listName = myList.getName();
 
 const tablon = document.getElementById("board");
 
-createListUIon(tablon);
+createListUIon(tablon, "mockup list");
 
 const listdiv = document.querySelector(".list");
 const listHeader = document.createElement("h1");
@@ -21,4 +21,9 @@ listdiv.appendChild(listHeader);
 
 for (let i = 0; i < currentList.length; i++) {
   listdiv.appendChild(displayChoreUI(currentList[i], i));
+}
+
+function listMaker(listName, container = tablon) {
+  const myList = new List(listName);
+  createListUIon(container, listName);
 }
