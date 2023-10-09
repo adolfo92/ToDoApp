@@ -1,5 +1,8 @@
 import { List } from "./AppModules/list";
 import { createListUIon, displayChoreUI } from "./AppModules/ui";
+import { replaceUnderScores } from "./AppModules/helpers";
+
+const tablon = document.getElementById("board");
 
 //------- MockupList
 const myList = new List("mockup list");
@@ -9,8 +12,6 @@ myList.addObjectChore("llamar a oriana");
 const currentList = myList.getList();
 const listName = myList.getName();
 //-------
-
-const tablon = document.getElementById("board");
 
 createListUIon(tablon, "mockup list");
 

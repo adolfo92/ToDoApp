@@ -17,14 +17,14 @@ export function _addClasses(container, ...classes) {
   }
 }
 
-function hasWhiteSpace(s) {
+export function hasWhiteSpace(s) {
   return /\s/g.test(s);
 }
 
-function replaceWhiteSpace(s) {
+export function replaceWhiteSpace(s) {
   return s.replace(/\s/g, "_");
 }
 
-function replaceUnderScores(s) {
+export function replaceUnderScores(s) {
   return s.replace(/\_/g, " ");
 }
