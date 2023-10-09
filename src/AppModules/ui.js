@@ -1,8 +1,9 @@
-import { _setIndex, _addClasses } from "./helpers";
+import { _setIndex, _addClasses, replaceWhiteSpace } from "./helpers";
 function createListUIon(parent, listName) {
   const listDiv = document.createElement("div");
   const addChoreButton = document.createElement("button");
-  _addClasses(listDiv, "list", listName);
+  _addClasses(listDiv, "list");
+  listDiv.id = replaceWhiteSpace(listName);
   addChoreButton.classList.add("addChore");
   listDiv.appendChild(addChoreButton);
 
