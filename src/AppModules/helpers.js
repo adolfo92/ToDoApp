@@ -22,5 +22,9 @@ function hasWhiteSpace(s) {
 }
 
 function replaceWhiteSpace(s) {
-  return s.replace(/\s/g, "-");
+  return s.replace(/\s/g, "_");
+}
+
+function replaceUnderScores(s) {
+  return s.replace(/\_/g, " ");
 }
