@@ -6,9 +6,9 @@ const tablon = document.getElementById("board");
 
 //------- MockupList
 const myList = new List("mockup list");
-myList.addObjectChore("regar las matas");
-myList.addObjectChore("comprar cigarros");
-myList.addObjectChore("llamar a oriana");
+myList.addChore("regar las matas");
+myList.addChore("comprar cigarros");
+myList.addChore("llamar a oriana");
 const currentList = myList.getList();
 const listName = myList.getName();
 //-------
