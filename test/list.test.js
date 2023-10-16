@@ -1,8 +1,9 @@
 import { List } from "../src/AppModules/list";
 describe("***List", () => {
   test("Create one list", () => {
+    const list = new List("Tareas de casa");
     const expected = "Tareas de casa";
-    expect(new List("Tareas de casa").getName()).toBe(expected);
+    expect(list.getName()).toEqual(expected);
   });
 });
 
