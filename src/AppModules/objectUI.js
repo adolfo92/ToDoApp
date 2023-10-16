@@ -22,14 +22,20 @@ class ListMaker {
     const choreList = this.list.getList();
 
     removePreviousDataFrom(this.container);
-    for (let i = 0; i < choreList.length; i++) {
-      const currentChore = choreList[i];
-      const choreContainer = paintThisChore(
-        currentChore.name,
-        currentChore.status
-      );
-      this.container.appendChild(choreContainer);
-    }
+    retrieveChoresFrom(choreList, this.container);
+  }
+
+  deleteThisChore(index) {
+    this.list.removeChore(index);
+  }
+}
+
+function retrieveChoresFrom(list, container) {
+  for (let i = 0; i < list.length; i++) {
+    const currentChore = list[i];
+    console.log(currentChore, i);
+    const choreContainer = paintThisChore(currentChore.name, currentChore.done);
+    container.appendChild(choreContainer);
   }
 }
 
@@ -66,7 +72,5 @@ function addTitleFrom(listName) {
   titleContainer.textContent = listName;
   return titleContainer;
 }
-
-function retrieveDataFrom(choreList) {}
 
 export { ListMaker };
