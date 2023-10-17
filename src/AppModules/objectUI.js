@@ -22,7 +22,7 @@ class ListMaker {
     const choreList = this.list.getList();
 
     removePreviousDataFrom(this.container);
-    retrieveChoresFrom(choreList, this.container);
+    retrieveChoresFromIntoWith(choreList, this.container, paintThisChore);
   }
 
   deleteThisChore(index) {
@@ -30,11 +30,11 @@ class ListMaker {
   }
 }
 
-function retrieveChoresFrom(list, container) {
+function retrieveChoresFromIntoWith(list, container, func) {
   for (let i = 0; i < list.length; i++) {
     const currentChore = list[i];
     console.log(currentChore, i);
-    const choreContainer = paintThisChore(currentChore.name, currentChore.done);
+    const choreContainer = func(currentChore.name, currentChore.done);
     container.appendChild(choreContainer);
   }
 }
