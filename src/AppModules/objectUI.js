@@ -18,33 +18,43 @@ class ListMaker {
     this.paintChores();
   }
 
-  paintChores() {
-    const choreList = this.list.getList();
-
-    removePreviousDataFrom(this.container);
-    retrieveChoresFromIntoWith(choreList, this.container, paintThisChore);
-  }
-
   deleteThisChore(index) {
     this.list.removeChore(index);
+    this.paintChores();
+  }
+
+  paintChores() {
+    removePreviousDataFrom(this.container);
+    retrieveChoresFrom_Into_With(this.list, this.container, paintThisChore);
   }
 }
 
-function retrieveChoresFromIntoWith(list, container, func) {
-  for (let i = 0; i < list.length; i++) {
-    const currentChore = list[i];
-    console.log(currentChore, i);
-    const choreContainer = func(currentChore.name, currentChore.done);
+function retrieveChoresFrom_Into_With(list, container, func) {
+  const myList = list.getList();
+  for (let i = 0; i < myList.length; i++) {
+    const currentChore = myList[i];
+    const choreContainer = func(currentChore);
+    console.log(choreContainer);
     container.appendChild(choreContainer);
   }
 }
 
-function paintThisChore(choreName, choreStatus) {
-  const container = document.createElement("div");
+function addDeleteButtonTo_withIndex(container, index, list) {
+  const button = document.createElement("button");
+  button.classList.add("delteButton");
+  button.textContent = "Delete";
+  button.addEventListener("click", () => {
+    list.deleteThisChore(index + 1);
+  });
+  container.appendChild(button);
+}
 
+function paintThisChore(currentChore) {
+  const container = document.createElement("div");
   container.classList.add("chore");
-  container.dataset.status = choreStatus;
-  container.textContent = choreName;
+
+  container.dataset.status = currentChore.done;
+  container.textContent = currentChore.name;
 
   return container;
 }
