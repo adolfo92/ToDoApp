@@ -24,27 +24,27 @@ class ListMaker {
   }
 
   paintChores() {
+    const retieveThisChores = retrieveChores.bind(this);
     removePreviousDataFrom(this.container);
-    retrieveChoresFrom_Into_With(this.list, this.container, paintThisChore);
+    retieveThisChores();
   }
 }
 
-function retrieveChoresFrom_Into_With(list, container, func) {
-  const myList = list.getList();
+function retrieveChores() {
+  const myList = this.list.getList();
   for (let i = 0; i < myList.length; i++) {
     const currentChore = myList[i];
-    const choreContainer = func(currentChore);
-    console.log(choreContainer);
-    container.appendChild(choreContainer);
+    const choreContainer = paintThisChore(currentChore);
+    addDeleteButtonTo(choreContainer, i, this);
+    this.container.appendChild(choreContainer);
   }
 }
-
-function addDeleteButtonTo_withIndex(container, index, list) {
+function addDeleteButtonTo(container, index, context) {
   const button = document.createElement("button");
   button.classList.add("delteButton");
   button.textContent = "Delete";
   button.addEventListener("click", () => {
-    list.deleteThisChore(index + 1);
+    context.deleteThisChore(index + 1);
   });
   container.appendChild(button);
 }
