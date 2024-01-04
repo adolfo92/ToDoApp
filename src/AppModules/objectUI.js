@@ -10,7 +10,6 @@ class ListMaker {
   paintListOn(parent) {
     const listTitle = addTitleFrom(this.list.getName());
     this.container.appendChild(listTitle);
-    //this.container.appendChild(this.deleteList(parent));
     parent.appendChild(this.container);
   }
 
@@ -29,21 +28,6 @@ class ListMaker {
     removePreviousDataFrom(this.container);
     retieveThisChores();
   }
-  // Codigo comentado porque creo que mi problema tiene que ver con las
-  // referencias en memoria
-  /*deleteList(parent) {
-    const deleteListBtn = document.createElement("button");
-    deleteListBtn.classList.add("delete-list");
-    deleteListBtn.textContent = "Delete list";
-    deleteListBtn.addEventListener("click", () => {
-      console.log("Deleting:\n", this.list);
-      delete this.list;
-      removePreviousDataFrom(parent);
-      retrieveThisLists();
-      return;
-    });
-    return deleteListBtn;
-  }*/
 }
 
 function retrieveChores() {
@@ -55,7 +39,7 @@ function retrieveChores() {
     this.container.appendChild(choreContainer);
   }
 }
-
+x;
 function addDeleteButtonTo(container, index, context) {
   const button = document.createElement("button");
   button.classList.add("delteButton");
